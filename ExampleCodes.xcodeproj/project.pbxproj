@@ -28,6 +28,8 @@
 		9B1934E01F847A0A00EBDC6D /* LibLocationMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1934DF1F847A0A00EBDC6D /* LibLocationMapVC.swift */; };
 		9B1934E21F85048F00EBDC6D /* CreateReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1934E11F85048F00EBDC6D /* CreateReminderVC.swift */; };
 		9B1934E41F85150000EBDC6D /* beep-8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9B1934E31F85150000EBDC6D /* beep-8.wav */; };
+		9BED11231F88177500342766 /* CustomMapPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED11221F88177500342766 /* CustomMapPointAnnotation.swift */; };
+		9BED11251F88185100342766 /* CustomMapPinAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED11241F88185100342766 /* CustomMapPinAnnotationView.swift */; };
 		DD8DB10158FFF6F2A8A90519 /* Pods_ExampleCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998D13E62163E821D0AE564A /* Pods_ExampleCodes.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		9B1934DF1F847A0A00EBDC6D /* LibLocationMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibLocationMapVC.swift; sourceTree = "<group>"; };
 		9B1934E11F85048F00EBDC6D /* CreateReminderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReminderVC.swift; sourceTree = "<group>"; };
 		9B1934E31F85150000EBDC6D /* beep-8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-8.wav"; sourceTree = "<group>"; };
+		9BED11221F88177500342766 /* CustomMapPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapPointAnnotation.swift; sourceTree = "<group>"; };
+		9BED11241F88185100342766 /* CustomMapPinAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapPinAnnotationView.swift; sourceTree = "<group>"; };
 		B210F1C3A6642928A1CB97E8 /* Pods-ExampleCodesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleCodesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleCodesTests/Pods-ExampleCodesTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6F8305BD1CE3B1A4956D11F /* Pods-ExampleCodesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleCodesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleCodesUITests/Pods-ExampleCodesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E0DA6BB10E8F7EE0DE007BA9 /* Pods-ExampleCodesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleCodesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleCodesUITests/Pods-ExampleCodesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				9B1934A01F844A1300EBDC6D /* Main.storyboard */,
 				9B1934D31F84574200EBDC6D /* HelpFunctions.swift */,
 				9B1934D71F845A3200EBDC6D /* SingletonObjects.swift */,
+				9BED11221F88177500342766 /* CustomMapPointAnnotation.swift */,
+				9BED11241F88185100342766 /* CustomMapPinAnnotationView.swift */,
 				9B1934CA1F8452F200EBDC6D /* BCCalendar */,
 				9B1934A31F844A1300EBDC6D /* Assets.xcassets */,
 				9B1934A51F844A1300EBDC6D /* LaunchScreen.storyboard */,
@@ -497,12 +503,14 @@
 				9B1934CE1F84553200EBDC6D /* CalendarDayCell.swift in Sources */,
 				9B1934D21F84563D00EBDC6D /* CalendarHeaderView.swift in Sources */,
 				9B19349F1F844A1300EBDC6D /* ViewController.swift in Sources */,
+				9BED11251F88185100342766 /* CustomMapPinAnnotationView.swift in Sources */,
 				9B19349D1F844A1300EBDC6D /* AppDelegate.swift in Sources */,
 				9B1934D01F8455CF00EBDC6D /* CalendarFlowLayout.swift in Sources */,
 				9B1934DA1F8468BB00EBDC6D /* ChicagoLibTableVC.swift in Sources */,
 				9B1934DC1F84695100EBDC6D /* LibAPI.swift in Sources */,
 				9B1934E21F85048F00EBDC6D /* CreateReminderVC.swift in Sources */,
 				9B1934CC1F84537A00EBDC6D /* CalendarView.swift in Sources */,
+				9BED11231F88177500342766 /* CustomMapPointAnnotation.swift in Sources */,
 				9B1934E01F847A0A00EBDC6D /* LibLocationMapVC.swift in Sources */,
 				9B1934DE1F846BB400EBDC6D /* LibDataModels.swift in Sources */,
 				9B1934D81F845A3200EBDC6D /* SingletonObjects.swift in Sources */,

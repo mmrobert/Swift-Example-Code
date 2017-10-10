@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class LibLocationMapVC: UIViewController, MKMapViewDelegate {
+class LibLocationMapVC: UIViewController {
     
     public var theLibStruct: Library?
     let locationManager = CLLocationManager()
@@ -33,6 +33,22 @@ class LibLocationMapVC: UIViewController, MKMapViewDelegate {
         }
         
         self.locationMap.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.annotateTheMap()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    fileprivate func annotateTheMap() {
+        
+        // looks this statement has no effect, could be commited out
         self.locationManager.startUpdatingLocation()
         
         if let _loc = self.loc {
@@ -41,20 +57,25 @@ class LibLocationMapVC: UIViewController, MKMapViewDelegate {
             let latitude = CLLocationDegrees(Double(la!)!)
             let longitude = CLLocationDegrees(Double(lo!)!)
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            annotation.title = "\(String(describing: self.nameLabel.text!))"
             
+            let viewRegion: MKCoordinateRegion = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002))
+            // let viewRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, 100000, 100000)
+            let adjustedRegion: MKCoordinateRegion = self.locationMap.regionThatFits(viewRegion)
+            self.locationMap.setRegion(adjustedRegion, animated: true)
+            self.locationMap.setCenter(coordinate, animated: true)
+            
+            //  let annotation = MKPointAnnotation()
+            let annotation = CustomMapPointAnnotation()
+            annotation.coordinate = coordinate
+            
+       // annotation title must not be nil to show callout bubble
+            annotation.title = "5"
+          //  self.locationMap.addAnnotations([annotation])
             self.locationMap.addAnnotation(annotation)
-            self.locationMap.showAnnotations([annotation], animated: true)
+            // looks this statement has no effect, it has been commited out
+            //    self.locationMap.showAnnotations([annotation], animated: true)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
@@ -67,3 +88,29 @@ class LibLocationMapVC: UIViewController, MKMapViewDelegate {
     */
 
 }
+
+extension LibLocationMapVC: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        // Don't do anything if it's the user's location point
+        if annotation.isKind(of: MKUserLocation.self) {
+            return nil
+        }
+        // We could display multiple types of point annotations
+        if annotation.isKind(of: CustomMapPointAnnotation.self) {
+            let pin = CustomMapPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
+            pin.image = UIImage(named: "mappin")
+            pin.setAnnotationLabel(annotationtext: "5")
+            pin.setCalloutBtn()
+            return pin
+        }
+        
+        return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        print("ch--9988--ch")
+    }
+}
+
